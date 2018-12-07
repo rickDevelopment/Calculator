@@ -9,7 +9,7 @@
 .row{
   width: 100%;
   height: 20%;
-
+  display: flex;
 }
 
 
@@ -23,14 +23,9 @@
   background-color: azure;
 }
 
-.row-2{
-  display: flex;
-  /* justify-content: center; */
-}
 
-/*set the with of the  button*/
 .clear-btn{
-  flex-grow: 3;
+  flex-grow: 2;
 }
 .division-btn{
   flex-grow: 1;
@@ -39,24 +34,6 @@
   flex-grow: 1;
 }
 
-.row-3{
-
-  display: flex;
-  /* justify-content: center; */
-}
-.row-4{
-
-  display: flex;
-  /* justify-content: center; */
-}
-.row-5{
-  display: flex;
-  /* justify-content: center; */
-}
-.row-6{
-  display: flex;
-  /* justify-content: center; */
-}
 .zero-btn{
   flex-grow: 4;
 }
