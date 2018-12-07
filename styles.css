@@ -63,6 +63,6 @@
 .equal-btn{
   order: 2;
 }
-button:nth-child(4), .equal-btn, .division-btn{
+button:last-child{
   background-color: orange;
 }
