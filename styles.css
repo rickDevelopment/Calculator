@@ -10,36 +10,38 @@
   width: 100%;
   height: 20%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 
 
 .btn{
   font-family: monospace; 
-  font-size: 2.2em;
-  flex-grow: 1;
-  margin: .5px;
+  font-size: 1.8em;
+  width: 24.5%;
+  height: 78%;
+  margin-bottom: .5%
 }
 .btn:hover{
   background-color: azure;
 }
 
-
 .clear-btn{
-  flex-grow: 2;
+  width:49.5%;
 }
-.division-btn{
+/* .division-btn{
   flex-grow: 1;
 }
 .backspace-btn{
   flex-grow: 1;
-}
+} */
 
 .zero-btn{
-  flex-grow: 4;
+  /* flex-grow: 4; */
+  width: 74.5%
 }
-.equal-btn{
-  order: 2;
-}
-button:last-child{
+
+button:nth-last-of-type(4n-1){
   background-color: orange;
 }
