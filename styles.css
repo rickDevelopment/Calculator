@@ -1,4 +1,8 @@
-.container{
+body{
+  margin: 0;
+}
+
+.calc-container{
   width: 400px;
   background-color: black;
   height: 500px;
@@ -12,7 +16,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
 
+.calc-screen{
+  font-size:40px;
+  color: white;
+justify-content: right;
 }
 
 
@@ -21,7 +30,8 @@
   font-size: 1.8em;
   width: 24.5%;
   height: 78%;
-  margin-bottom: .5%
+  margin-bottom: .5%;
+  border:none;
 }
 .btn:hover{
   background-color: azure;
