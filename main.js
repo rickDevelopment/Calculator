@@ -11,7 +11,7 @@ let buttonClicked = document.querySelector('.calc-buttons')
     let clickedValue = event.target.innerText
 //Check if clicked value is a number or symbol 
     if(isNaN(parseInt(clickedValue))){
-      handleSymbol(value)
+      handleSymbol(clickedValue)
     }
     else{
       handleNumber(clickedValue)
@@ -23,6 +23,13 @@ let buttonClicked = document.querySelector('.calc-buttons')
   function rerender(){
     screen.innerHTML = buffer;
   }
+  //Function reset everthing to default when the clear button is pressed
+  function clearButton(){
+    buffer = '0';
+    runningTotal = 0;
+    previousOperator = null
+    rerender()
+  }
   // Function to run when a symbol is clicked 
 
   function handleNumber(clickedValue){
@@ -33,10 +40,20 @@ let buttonClicked = document.querySelector('.calc-buttons')
     else{
       buffer += clickedValue
     }
-  }
+    runningTotal = parseInt(buffer)
 
+  }
   // Function to run when a symbol is clicked 
   function handleSymbol(value){
-
+    switch(value){
+      case 'C':
+        clearButton()
+      case '+':
+        console.log(runningTotal)
+        if(previousOperator === null){
+          previousOperator = '+';
+        }
+        break;
+    }
 
   }
