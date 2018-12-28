@@ -1,5 +1,9 @@
+*{
+  box-sizing:border-box;
+}
 body{
   margin: 0;
+  padding: 0;
 }
 
 .calc-container{
@@ -21,20 +25,27 @@ body{
 .calc-screen{
   font-size:40px;
   color: white;
-justify-content: right;
+  text-align: right;
+  padding: 20px 5px;
 }
 
 
 .btn{
   font-family: monospace; 
-  font-size: 1.8em;
+  font-size: 40px;
   width: 24.5%;
   height: 78%;
   margin-bottom: .5%;
   border:none;
+  border-radius: 0;
+  cursor: pointer;
 }
 .btn:hover{
-  background-color: azure;
+  background-color:#ebebeb;
+}
+
+.btn:active{
+  background-color: #bbbcbe;
 }
 
 .clear-btn{
