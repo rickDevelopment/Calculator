@@ -1,47 +1,42 @@
-console.log('javascript file loaded')
-//run JS after the page loads
+/*==============Variable Declaration============*/
+let runningTotal = 0;
+let buffer = '0';
+let previousOperator = null;
+//Get class from html document
+let screen = document.querySelector('.calc-screen');
+let buttonClicked = document.querySelector('.calc-buttons')
 
-  //select elements from the html
-  let calcScreen = document.querySelector('.calc-screen');
-  let calcNumbers = document.querySelector('.calc-numbers');
-  let clearButton = document.querySelector('.clear-btn');
-  let equalButton = document.querySelector('.equal-btn');
-  
-  calcNumbers.addEventListener('click', function(event){
-    //get the value of the number that pressed then convert it and add it to the numbers array
-    
-    calcScreen.innerHTML = event.target.innerText;
-
-    if(numbersPressed != equalButton){
-      
-      numbersPressed.push(parseInt(event.target.innerText))
+//Function to handle clicked events
+  buttonClicked.addEventListener('click', function(event){
+    let clickedValue = event.target.innerText
+//Check if clicked value is a number or symbol 
+    if(isNaN(parseInt(clickedValue))){
+      handleSymbol(value)
     }
-    //Clear the screen
-    if(event.target === clearButton){
-      clear();
+    else{
+      handleNumber(clickedValue)
     }
-    if(event.target === equalButton){
-      addition();
-    }
-  });
-
-  // array to store numbers 
-  let numbersPressed = [];
-  
-  // 
-  function addition(){
-    let total = 0;
-    numbersPressed.forEach(function(number){
-      total += number;
-      return total; 
-    })
-    calcScreen.innerHTML = total;
-    console.log(total)
+    rerender();
+  })
+/*===================Functions ======================*/
+//Update screen with the value of buffer
+  function rerender(){
+    screen.innerHTML = buffer;
   }
-  
-  function clear(){
-    calcScreen.innerHTML = 0;
-    numbersPressed = []
-    return
+  // Function to run when a symbol is clicked 
+
+  function handleNumber(clickedValue){
+    console.log(`Handle number: ${clickedValue}`)
+    if(buffer === "0"){
+      buffer = clickedValue
+    }
+    else{
+      buffer += clickedValue
+    }
   }
 
+  // Function to run when a symbol is clicked 
+  function handleSymbol(value){
+
+
+  }
