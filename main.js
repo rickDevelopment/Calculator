@@ -30,30 +30,52 @@ let buttonClicked = document.querySelector('.calc-buttons')
     previousOperator = null
     rerender()
   }
+
+  //addition function
+
+  function addition(a,b){
+    let total = 0
+     a = runningTotal
+     b = parseInt(buffer)
+     total = a+b;
+     console.log(total) 
+     runningTotal =total;
+     return runningTotal;
+  }
   // Function to run when a symbol is clicked 
 
-  function handleNumber(clickedValue){
-    console.log(`Handle number: ${clickedValue}`)
+  function handleNumber(value){
+    console.log(`Handle number: ${value}`)
     if(buffer === "0"){
-      buffer = clickedValue
+      buffer = value
     }
     else{
-      buffer += clickedValue
+      buffer += value
     }
-    runningTotal = parseInt(buffer)
 
   }
   // Function to run when a symbol is clicked 
   function handleSymbol(value){
+    if(previousOperator === null){
+      previousOperator = value;
+    }
     switch(value){
       case 'C':
         clearButton()
-      case '+':
-        console.log(runningTotal)
-        if(previousOperator === null){
-          previousOperator = '+';
+        break
+      case '=':
+      runningTotal = parseInt(buffer)
+      console.log(runningTotal)
+          addition()
+          break;
+      case '←':
+        if(buffer.length === 1){
+          buffer = "0";
         }
-        break;
-    }
-
+        else{
+          buffer = buffer.slice(0, buffer.length-1)
+        }
+        }
   }
+
+  
